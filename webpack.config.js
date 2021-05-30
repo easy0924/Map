@@ -1,6 +1,8 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
+const HtmlWebPackPlugin = require( 'html-webpack-plugin' );
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require("webpack");
 const path = require("path");
 
 const isProduction = process.env.NODE_ENV == "production";
@@ -8,7 +10,7 @@ const isProduction = process.env.NODE_ENV == "production";
 const stylesHandler = isProduction ? MiniCssExtractPlugin.loader : "style-loader";
 
 const config = {
-    entry: "./src/index.ts",
+    entry: "./src/index.tsx",
     output: {
         path: path.resolve(__dirname, "dist"),
     },
@@ -18,8 +20,11 @@ const config = {
         port: 9000,
     },
     plugins: [
-        // Add your plugins here
-        // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+        new HtmlWebPackPlugin({
+            template: path.resolve( __dirname, 'public/index.html' ),
+            filename: 'index.html'
+        }),
+        new webpack.ProgressPlugin(),
     ],
     module: {
         rules: [
