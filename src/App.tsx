@@ -1,23 +1,15 @@
 import React from 'react';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary.component';
+import NavBar from './components/NavBar/NavBar.component';
+import Router from './components/Router/Router.component';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-            Map
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React 2
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <ErrorBoundary>
+            <NavBar />
+            <Router />
+        </ErrorBoundary>
+    );
 }
 
 export default App;
