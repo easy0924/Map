@@ -1,7 +1,5 @@
 import React from 'react';
-import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary.component';
-import NavBar from './components/NavBar/NavBar.component';
-import Router from './components/Router/Router.component';
+import { ErrorBoundary, NavBar, Router } from 'components';
 
 function App() {
     return (

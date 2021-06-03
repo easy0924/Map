@@ -1,3 +1,4 @@
+import { About, Home } from 'components';
 import React from 'react';
 import {
     BrowserRouter,
@@ -11,10 +12,10 @@ const Router: React.FC = () => {
         <BrowserRouter>
             <Switch>
                 <Route path='/home'>
-                    Home
+                    <Home />
                 </Route>
                 <Route path='/about'>
-                    About
+                    <About />
                 </Route>
                 <Redirect to='/home' />
             </Switch>

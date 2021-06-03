@@ -7,6 +7,11 @@
     "target": "es5",
     "allowJs": true,
     "moduleResolution": "node",
+    "baseUrl": "src",
+    "paths": {
+        "components": ["components/index.ts"],
+        "components/*": ["components/*"],
+    },
   },
   "files": ["src/index.tsx"]
 }
